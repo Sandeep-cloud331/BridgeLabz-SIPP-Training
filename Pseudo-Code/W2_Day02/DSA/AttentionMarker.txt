@@ -1,0 +1,23 @@
+CLASS AttendanceTracker
+    ATTRIBUTE: records[students][days]
+
+    METHOD markAttendance(studentId, day, value)
+        records[studentId][day] = value   // 'P' or 'A'
+
+    METHOD updateAttendance(studentId, day, value)
+        records[studentId][day] = value
+
+    METHOD generateReport(studentId)
+        count = 0
+        FOR each day in records[studentId]
+            IF value == 'P'
+                count++
+        PRINT "Student", studentId, "was present", count, "days"
+
+// Example Run
+tracker = new AttendanceTracker(5 students, 30 days)
+tracker.markAttendance(1, 1, 'P')
+tracker.markAttendance(1, 2, 'P')
+tracker.markAttendance(1, 3, 'A')
+tracker.updateAttendance(1, 3, 'P')
+tracker.generateReport(1)  // "26 days present"

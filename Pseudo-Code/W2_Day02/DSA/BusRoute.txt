@@ -1,0 +1,30 @@
+CLASS Node
+    ATTRIBUTES: stopName, next
+
+CLASS LinkedList
+    ATTRIBUTE: head
+    METHOD insertAfter(targetStop, newStop)
+        find node with stopName == targetStop
+        create newNode(newStop)
+        link newNode after targetStop
+    METHOD delete(stopName)
+        find node with stopName
+        remove it by adjusting links
+    METHOD search(stopName)
+        traverse list
+        IF found RETURN TRUE
+        ELSE RETURN FALSE
+    METHOD displayRoute()
+        traverse list and print stopName
+
+// Example Run
+route = new LinkedList()
+route.add("Depot")
+route.add("Main Street")
+route.add("City Mall")
+route.add("Hospital")
+route.add("Airport")
+
+route.insertAfter("City Mall", "University Stop")
+route.delete("Hospital")
+route.search("Airport")   // TRUE

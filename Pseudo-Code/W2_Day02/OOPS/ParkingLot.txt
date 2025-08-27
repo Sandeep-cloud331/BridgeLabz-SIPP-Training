@@ -1,0 +1,22 @@
+Class Vehicle
+    Attributes: vehicleNumber, entryTime
+    Method calculateFee(exitTime)
+        SOP("Base fee logic")
+
+Class Car extends Vehicle
+    Method calculateFee(exitTime)
+        hours = ceil(exitTime - entryTime in hours)
+        fee = 50 + (hours - 1) * 30
+        Return fee
+
+Class Bike extends Vehicle
+    Method calculateFee(exitTime)
+        hours = ceil(exitTime - entryTime in hours)
+        fee = 20 + (hours - 1) * 10
+        Return fee
+
+Class Truck extends Vehicle
+    Method calculateFee(exitTime)
+        hours = ceil(exitTime - entryTime in hours)
+        fee = 100 + (hours - 1) * 50
+        Return fee

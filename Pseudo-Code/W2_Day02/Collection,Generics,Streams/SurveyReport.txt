@@ -1,0 +1,11 @@
+Class SurveyResponse
+    Attributes: restaurantName, rating
+
+Class SurveyAnalyzer
+    Method generateReport(responses)
+        Map<String, List<Integer>> groupedByRestaurant
+        FOR each response
+            groupedByRestaurant[restaurant].add(rating)
+        FOR each restaurant
+            avg = average(ratings)
+            SOP(restaurant + " → " + avg)
