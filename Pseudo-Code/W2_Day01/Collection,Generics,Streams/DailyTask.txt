@@ -1,0 +1,23 @@
+CLASS TaskManager
+    ATTRIBUTE: LinkedHashMap<Integer, String> tasks
+    ATTRIBUTE: taskCounter = 0
+
+    METHOD addTask(description)
+        taskCounter++
+        tasks.put(taskCounter, description)
+
+    METHOD removeTask(taskId)
+        tasks.remove(taskId)
+
+    METHOD viewTasks()
+        FOR each entry in tasks
+            PRINT entry.key → entry.value
+
+// Example Run
+manager = new TaskManager()
+manager.addTask("Check emails")         // ID=1
+manager.addTask("Prepare sales report") // ID=2
+manager.addTask("Call client")          // ID=3
+manager.removeTask(2)
+manager.viewTasks()
+// Output: 1→Check emails, 3→Call client

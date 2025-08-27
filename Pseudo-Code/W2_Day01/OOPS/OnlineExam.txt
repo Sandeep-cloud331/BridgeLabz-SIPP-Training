@@ -1,0 +1,26 @@
+CLASS User
+    ATTRIBUTES: username, password
+    METHOD login()
+
+CLASS Student EXTENDS User
+    ATTRIBUTE: enrolledCourses
+    METHOD login()
+        IF username and password are valid AND enrolledCourses not empty
+            PRINT "Access granted to exams"
+        ELSE
+            PRINT "Login failed - Not enrolled"
+
+CLASS Admin EXTENDS User
+    ATTRIBUTE: adminPrivileges
+    METHOD login()
+        IF username and password are valid AND adminPrivileges == TRUE
+            PRINT "Access granted to exam management"
+        ELSE
+            PRINT "Login failed - Not authorized"
+
+// Example Run
+student1 = new Student("john123", "pass123", ["Math", "CS"])
+student1.login()   // shows available exams
+
+admin1 = new Admin("admin007", "securePass", TRUE)
+admin1.login()     // shows exam management tools

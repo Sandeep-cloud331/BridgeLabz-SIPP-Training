@@ -1,0 +1,18 @@
+METHOD wordCounter(paragraph)
+    cleanText = remove punctuation, convert to lowercase
+    words = split cleanText by spaces
+    map = empty Map<String, Integer>
+
+    FOR each word in words
+        IF map contains word
+            map[word]++
+        ELSE
+            map[word] = 1
+
+    sort map by frequency (descending)
+    PRINT sorted results
+
+// Example Run
+input = "The news today is about the rise in technology trends."
+wordCounter(input)
+// Output: the(2), about(1), in(1), is(1), news(1), rise(1), technology(1), today(1), trends(1)
